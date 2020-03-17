@@ -13,6 +13,6 @@ class Court extends Model
 
     public function notes()
     {
-        return $this->hasMany('App\Notes');  // her mahkemenin birden çok notu var 
+        return $this->hasMany('App\Notes');  // her mahkemenin birden çok notu var
     }
 }

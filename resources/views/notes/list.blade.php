@@ -7,13 +7,20 @@
             <div class="card">
                 <div class="card-header">Mahkeme Notları</div>
                 <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
+                    <ul class="list-group">
+                        @foreach ($notes as $note)
+                            <li class="list-group-item">{{$note->content}}</li>
+                        @endforeach
+                    </ul>
+                    <form action="{{route('not-olustur')}}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Not</label>
+                            <input type="text" name="not" class="form-control"  />
+                        </div>
+                        <input type="hidden" name="courtid" class="form-control" value="{{$court_id}}"/>
+                        <button type="submit" class="btn btn-primary float-right">Gönder</button>
+                    </form>
                 </div>
             </div>
         </div>

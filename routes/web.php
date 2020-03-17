@@ -39,3 +39,5 @@ Route::get('/mahkeme-notlari/{court_id}', 'NotesController@courtNotes')->name('m
 Route::get('/mahkeme-duzenle/{court_id}', 'CourtController@editCourt')->name('duzenle-mahkeme');
 
 Route::post('/mahkeme-duzenle', 'CourtController@updateCourt')->name('duzenle-mahkeme2');
+
+Route::post('/mahkeme-notlari', 'NotesController@createNote')->name('not-olustur');
