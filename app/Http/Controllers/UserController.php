@@ -32,4 +32,19 @@ class UserController extends Controller
         return view('user.list');
 
     }
+
+    public function changePassword(Request $request) {
+
+        $request->validate([
+            'password' => 'min:6|required_with:password1|same:password1',
+            'password1' => 'min:6',
+        ]);
+
+        $user = User::find($request->userid);
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return redirect('home');
+
+    }
+
 }

@@ -47,3 +47,7 @@ Route::get('/not-duzenle/{court_id}', 'NotesController@editNote')->name('duzenle
 Route::post('/note-duzenle', 'NotesController@updateNote')->name('guncelle-not');
 
 Route::get('/not-sil/{court_id}', 'NotesController@destroy')->name('not-sil');
+
+Route::view('/profil', 'user.profile')->name('profil');
+
+Route::post('/sifre-degistir', 'UserController@changePassword')->name('sifre-degistir');
