@@ -14,7 +14,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->tcn = $request->tcn;
         $password = $request->tcn . '123';
-        $user->password = Hash::make($password);
+        $user->password = Hash::make($password); // pass şifreleme db için hash::make
         $user->save();
         return redirect('home');
     }
