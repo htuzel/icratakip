@@ -41,3 +41,9 @@ Route::get('/mahkeme-duzenle/{court_id}', 'CourtController@editCourt')->name('du
 Route::post('/mahkeme-duzenle', 'CourtController@updateCourt')->name('duzenle-mahkeme2');
 
 Route::post('/mahkeme-notlari', 'NotesController@createNote')->name('not-olustur');
+
+Route::get('/not-duzenle/{court_id}', 'NotesController@editNote')->name('duzenle-not');
+
+Route::post('/note-duzenle', 'NotesController@updateNote')->name('guncelle-not');
+
+Route::get('/not-sil/{court_id}', 'NotesController@destroy')->name('not-sil');

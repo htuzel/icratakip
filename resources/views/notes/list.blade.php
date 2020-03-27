@@ -9,7 +9,11 @@
                 <div class="card-body">
                     <ul class="list-group">
                         @foreach ($notes as $note)
-                            <li class="list-group-item">{{$note->content}}</li>
+                            <li class="list-group-item">
+                            {{$note->content}}
+                            <a href="{{route('duzenle-not', $note->id)}}" class="btn btn-success float-right">Düzenle</a>
+                            <a href="{{route('not-sil', $note->id)}}" class="btn btn-primary float-right">sil</a>
+                            </li>
                         @endforeach
                     </ul>
                     <form action="{{route('not-olustur')}}" method="POST">
