@@ -53,6 +53,7 @@ class UserController extends Controller
 
         $user = User::find($request->userid);
         $user->password = Hash::make($request->password);
+        $user->ispasswordchange = true;
         $user->save();
         return redirect('home');
 
