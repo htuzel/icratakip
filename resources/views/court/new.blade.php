@@ -11,11 +11,11 @@
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mahkeme Numarası</label>
-                            <input type="text" name="casenumber" class="form-control"  />
+                            <input type="text" value="{{old('casenumber')}}"  name="casenumber" class="form-control"  />
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Mahkeme Adı</label>
-                            <input type="text" name="courtname" class="form-control"  />
+                            <input type="text" value="{{old('courtname')}}" name="courtname" class="form-control"  />
                         </div>
                         <input type="hidden" name="userid" class="form-control" value="{{$userid}}"/>
                         <button type="submit" class="btn btn-primary">Kaydet</button>

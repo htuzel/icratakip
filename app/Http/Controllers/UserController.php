@@ -10,6 +10,11 @@ class UserController extends Controller
 {
     public function registerUser(Request $request)
     {
+        $request->validate([
+            'name' => 'alpha',
+            'tcn' => 'numeric',
+        ]);
+
         $user = new User();
         $user->name = $request->name;
         $user->tcn = $request->tcn;
