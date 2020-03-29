@@ -39,6 +39,12 @@ class CourtController extends Controller
     }
 
 public function updateCourt(Request $request){
+
+    $request->validate([
+        'casenumber' => 'numeric',
+        'courtname' => 'alpha',
+    ]);
+
     $court = Court::find($request->courtid);
     $court->casenumber = $request->casenumber;
     $court->courtname = $request->courtname;

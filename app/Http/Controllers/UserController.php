@@ -25,6 +25,12 @@ class UserController extends Controller
     }
 
     public function updateUser(Request $request) {
+
+        $request->validate([
+            'name' => 'alpha',
+            'tcn' => 'numeric',
+        ]);
+
         $user = User::find($request->userid);
         $user->name = $request->name;
         $user->tcn = $request->tcn;

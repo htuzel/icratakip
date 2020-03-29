@@ -15,6 +15,11 @@ class NotesController extends Controller
     }
 
     public function createNote(Request $request) {
+
+        $request->validate([
+            'not' => 'string',
+        ]);
+
         $note = new Notes();
         $note->content = $request->not;
         $note->court_id = $request->courtid;
@@ -30,6 +35,11 @@ class NotesController extends Controller
     }
 
     public function updateNote(Request $request) { //update için function
+
+        $request->validate([
+            'content' => 'string',
+        ]);
+
         $notes = Notes::find($request->note_id); // not id den not u bulduk
         $notes->content = $request->content;  //
         $notes->save();  //save yaptık
